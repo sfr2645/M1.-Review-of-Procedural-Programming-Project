@@ -1,5 +1,6 @@
 // M1. Review of Procedural Programming Project.cpp
-// This code will allow the user to play a functional game of Rock, Paper, Scissors with the machine.
+// This code will allow the user to play a functional game of Rock, Paper, Scissors with the machine
+// and keep track of who is winning with a running tally.
 
 #include <iostream>
 #include <string>
@@ -8,46 +9,46 @@
 using namespace std;
 
 int main() {
-    string player;
-    string opponent;
-    int playerScore = 0;
-    int opponentScore = 0;
+    string challenger;
+    string computer;
+    int challengerScore = 0;
+    int computerScore = 0;
     string rps[] = { "rock", "paper", "scissors" };
 
     srand((unsigned int)time(NULL));
 
     while (true) {
-        cout << "Enter rock, paper, or scissors:";
-        getline(cin, player);
+        cout << "Please enter rock, paper, or scissors:";
+        getline(cin, challenger);
 
-        if (player != "rock" && player != "paper" && player != "scissors") {
+        if (challenger != "rock" && challenger != "paper" && challenger != "scissors") {
             break;
         }
 
-        opponent = rps[rand() % 3]; 
-        cout << "Opponent chooses: " << opponent << endl;
+        computer = rps[rand() % 3]; 
+        cout << "Computer chooses: " << computer << endl;
 
-        if (player == opponent) {
-            playerScore++;
-            opponentScore++;
+        if (challenger == computer) {
+            challengerScore++;
+            computerScore++;
         }
-        else if (player == "rock") {
-            if (opponent == "scissors") playerScore++;
-            else if (opponent == "paper") opponentScore++;
+        else if (challenger == "rock") {
+            if (computer == "scissors") challengerScore++;
+            else if (computer == "paper") computerScore++;
         }
-        else if (player == "paper") {
-            if (opponent == "rock") playerScore++;
-            else if (opponent == "scissors") opponentScore++;
+        else if (challenger == "paper") {
+            if (computer == "rock") challengerScore++;
+            else if (computer == "scissors") computerScore++;
         }
-        else if (player == "scissors") {
-            if (opponent == "paper") playerScore++;
-            else if (opponent == "rock") opponentScore++;
+        else if (challenger == "scissors") {
+            if (computer == "paper") challengerScore++;
+            else if (computer == "rock") computerScore++;
         }
-        cout << "Player: " << playerScore << " Opponent: " << opponentScore << endl;
+        cout << "Challenger: " << challengerScore << " Computer: " << computerScore << endl;
     }
 
-    cout << "Player: " << playerScore << " Opponent: " << opponentScore << endl;
-    if (playerScore > opponentScore) cout << "Player wins!" << endl;
-    else if (playerScore < opponentScore) cout << "Opponent wins!" << endl;
-    else cout << "Tie!" << endl;
+    cout << "Challenger: " << challengerScore << " Computer: " << computerScore << endl;
+    if (challengerScore > computerScore) cout << "Woohoo! Challenger wins." << endl;
+    else if (challengerScore < computerScore) cout << "Lame, computer wins!" << endl;
+    else cout << "You tied with the computer!" << endl;
 }
