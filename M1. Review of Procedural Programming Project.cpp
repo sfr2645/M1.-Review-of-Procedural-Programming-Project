@@ -44,7 +44,7 @@ int main() {
             if (computer == "paper") challengerScore++;
             else if (computer == "rock") computerScore++;
         }
-        cout << "Challenger: " << challengerScore << " Computer: " << computerScore << endl;
+        cout << "Challenger: " << challengerScore << " Computer: " << computerScore << " \nPress enter to quit." << endl;
     }
 
     cout << "Challenger: " << challengerScore << " Computer: " << computerScore << endl;
