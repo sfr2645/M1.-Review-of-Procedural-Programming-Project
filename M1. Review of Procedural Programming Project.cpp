@@ -1,5 +1,6 @@
 // M1. Review of Procedural Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// This code will read a txt file, calculate an average of the test scores,
+// and provide a letter grade for the average.
 #include <iostream>
 #include <fstream>
 #include <iomanip>
